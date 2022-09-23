@@ -1,4 +1,4 @@
-package site.metacoding.red.domain.stadium;
+package site.metacoding.red.domain.expulsion;
 
 import java.sql.Timestamp;
 
@@ -15,8 +15,11 @@ import lombok.Setter;
 @Builder
 @Setter
 @Getter
-public class Stadium {
-	private Integer id;
-	private String stadiumName;
-	private Timestamp openDate;
+public class Expulsion {
+	int id;
+	int teamId;
+	int positionsId;
+	int playerId;
+	String reason;
+	Timestamp expDate;
 }

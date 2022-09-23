@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.metacoding.red.domain.team.TeamDao">
+<mapper namespace="site.metacoding.red.domain.team.TeamDAO">
 	
 	<insert id="insert">
 		INSERT INTO team(stadiumId,teamName,createDate)
@@ -10,7 +10,7 @@
 		now())
 	</insert>
 
-	<select id="findById" resultType="site.metacoding.red.domain.team.TeamDao">
+	<select id="findById" resultType="site.metacoding.red.domain.team.TeamDAO">
 		SELECT * FROM team WHERE id = #{id}
 	</select>
 
