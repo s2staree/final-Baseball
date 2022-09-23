@@ -54,9 +54,9 @@ DROP table team;
 CREATE TABLE player(
 	id int auto_increment primary key,
     teamId int,
-    position varchar(100),
+    positionsId int,
     playerName varchar(100) unique,
-    createDate timestamp
+    regDate timestamp
 );
 
 SELECT *
@@ -67,15 +67,33 @@ DROP table player;
 #퇴출
 CREATE TABLE expulsion(
 	id int auto_increment primary key,
-	 teamName varchar(100),
-	 position varchar(100),
-    playerName varchar(100),
+	 teamId int,
+	 positionsId int,
+    playerId int,
     reason varchar(100) unique,
     expDate timestamp
 );
 
 SELECT *
 FROM expulsion;
+
+DROP table expulsion;
+
+# 포지션
+CREATE TABLE positions(
+	id int auto_increment primary key,
+	 position varchar(100),
+	 teamName1 varchar(100),
+	 teamName2 varchar(100),
+	 teamName3 varchar(100)
+);
+
+SELECT *
+FROM positions;
+
+DROP table positions;
+
+COMMIT;
 ```
 
 ### 더미데이터 추가
@@ -101,25 +119,25 @@ VALUES("3","백팀",NOW());
 SELECT *
 FROM team;
 
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(1,"타자","문태일",now());
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(1,"투수","서쟈니",now());
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(1,"외야수","이태용",NOW());
 
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(2,"타자","나유타",now());
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(2,"투수","김도영",now());
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(2,"내야수","정재현",now());
 
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(3,"타자","김정우",now());
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(3,"투수","이마크",now());
-INSERT into player(teamId,position,playerName,createDate)
+INSERT into player(teamId,position,playerName,regDate)
 VALUES(3,"내야수","이해찬",NOW());
 
 SELECT *
