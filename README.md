@@ -4,7 +4,8 @@
 alter table 테이블명 convert to character set utf8;
 를 넣어준다.
 
-### 테이블 생성
+
+## 테이블 생성
 ```sql
 create table stadium(
     id int primary KEY auto_increment,
@@ -27,7 +28,7 @@ create table player(
 );
 ```
 
-### 더미데이터 추가
+## 더미데이터 추가
 ```sql
 
 INSERT INTO stadium(NAME, created_at) VALUES('사직야구장',NOW());
@@ -42,4 +43,13 @@ INSERT INTO player(NAME,POSITION, team_id, is_outer, created_at) VALUES('이대�
 INSERT INTO player(NAME,POSITION, team_id, is_outer, created_at) VALUES('홍길동','외야수',2,0,NOW());
 INSERT INTO player(NAME,POSITION, team_id, is_outer, created_at) VALUES('장보고','내야수',3,0,NOW());
 COMMIT;
+```
+
+
+### MariaDB auto commit 해제/설정/상태확인
+```sql
+
+SET AUTOCOMMIT = FALSE;
+SET AUTOCOMMIT = TRUE;
+show variables like 'autocommit%';
 ```
